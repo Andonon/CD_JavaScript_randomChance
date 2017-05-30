@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <meta lang = "en">
+    </head>
+
+    <script>
+
+                
+        function randomChance(){
+
+            var quarters = 110
+            var numberOfGames = 0
+            var winnings = 0
+
+        while(quarters > 0){
+
+            numberOfGames = numberOfGames+1
+            var yourolled = Math.floor(Math.random()*100) + 101;
+            var reward = Math.floor(Math.random()*50) + 51;
+            var luckynum = 176;
+
+        if(yourolled === luckynum){
+            var newquarters = quarters + reward - 1;
+            console.log("You WON!!! Quarters left:", newquarters, "Lucky Number:", luckynum, "Your REWARD was:", reward);
+            quarters = newquarters;
+            winnings = winnings + reward;
+        }
+
+        else {
+            var newquarters = quarters - 1;    
+            console.log("You lost... Quarters left:", newquarters, "|| Lucky Number was:", luckynum, "you rolled a", yourolled, ". Too bad. :-(");
+            }
+        quarters = quarters - 1;
+
+        }
+        console.log("HAHA - You lost all your quarters... play agin sometime... You got", numberOfGames, "games this round and won a total of", winnings, "quarters!")
+        }
+        randomChance();
+
+
+    </script>
+
+</html>
+
+
+
