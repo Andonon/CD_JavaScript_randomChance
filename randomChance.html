@@ -2,16 +2,16 @@
 <html>    
     <head>
         <meta lang = "en">
+        <title>A Game of Chance</title>
+        <meta description = "A javascript game, no html">
     </head>
-
-    <script>
-
-                
+    <script>    
         function randomChance(){
 
             var quarters = 110
             var numberOfGames = 0
             var winnings = 0
+            var gamesWon = 0
 
         while(quarters > 0){
 
@@ -24,7 +24,8 @@
             var newquarters = quarters + reward - 1;
             console.log("You WON!!! Quarters left:", newquarters, "Lucky Number:", luckynum, "Your REWARD was:", reward);
             quarters = newquarters;
-            winnings = winnings + reward;
+            winnings+=reward;
+            gamesWon+=1;
         }
 
         else {
@@ -34,13 +35,10 @@
         quarters = quarters - 1;
 
         }
-        console.log("HAHA - You lost all your quarters... play agin sometime... You got", numberOfGames, "games this round and won a total of", winnings, "quarters!")
+        console.log("HAHA - You lost all your quarters... play agin sometime... You got", numberOfGames, "games this round,", gamesWon, "of which you won and a total of", winnings, "quarters!")
         }
         randomChance();
-
-
     </script>
-
 </html>
 
 
